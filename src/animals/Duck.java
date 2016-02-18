@@ -1,6 +1,6 @@
 package animals;
 
-public class Duck extends AnimalsAbstract {
+public class Duck implements AnimalsInterface {
 
     private String name;
     private int age;
@@ -27,9 +27,8 @@ public class Duck extends AnimalsAbstract {
     }
 
     @Override
-    public void say(AnimalsInterface animalsInterface) {
-        Duck duck = (Duck)animalsInterface;
-        System.out.println(duck.getName() +" "+ duck.getAge() + " say - krja krja");
+    public void say() {
+        System.out.println(getName() +" "+ getAge() + " say - krja krja");
     }
 
     @Override
