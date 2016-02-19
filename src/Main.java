@@ -1,40 +1,33 @@
 import animals.*;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
-
 public class Main {
 
     public static void main(String[] args) {
 
-
-        AnimalsInterface dog = new Dog("barsik", 12);
-        AnimalsInterface dog1 = new Dog("tyzik", 2);
-
-        AnimalsInterface cat = new Cat("myrchik", 15);
-        AnimalsInterface cat1 = new Cat("pushok", 9);
-
-        AnimalsInterface duck = new Duck("gysak", 1);
-        AnimalsInterface duck1 = new Duck("mudak", 5);
-        AnimalsInterface duck12 = new Duck("mudak", 5);
-
-        Set<AnimalsInterface> animalsSet = new HashSet<AnimalsInterface>();
-        animalsSet.add(dog);
-        animalsSet.add(dog1);
-        animalsSet.add(cat);
-        animalsSet.add(cat1);
-        animalsSet.add(duck);
-        animalsSet.add(duck1);
-        animalsSet.add(duck12);
-
-        Iterator<AnimalsInterface> itr = animalsSet.iterator();
-        while (itr.hasNext()){
-            AnimalsInterface animals = itr.next();
-            animals.say();
-        }
+//        HashSet<AnimalsInterface> animalsSet = new HashSet<AnimalsInterface>();
+//        animalsSet.add(new LitleDog("barsik", 12));
+//        animalsSet.add(new BigDog("tyzik", 2));
+//        animalsSet.add(new Cat("myrchik", 15));
+//        animalsSet.add(new Cat("pushok", 9));
+//        animalsSet.add(new Duck("gysak", 1));
+//        animalsSet.add(new Duck("mudak", 5));
+//        animalsSet.add(new Duck("mudak", 5));
+//
+//        Iterator<AnimalsInterface> itr = animalsSet.iterator();
+//        while (itr.hasNext()){
+//            AnimalsInterface animals = itr.next();
+//            animals.tryToSpeak();
+//        }
 
 
+        Animal bigDog = new BigDog("BIG_DOG", 12);
+        Animal litleDog = new LitleDog("litle_dog", 1);
+        Animal cat = new Cat("cat", 1);
 
+        System.out.println("bigDog " +bigDog.tryToSpeak());
+        System.out.println("litleDog "+litleDog.tryToSpeak());
+        bigDog.setSpeak(new SpeakQuietly());
+        System.out.println("bigDog " + bigDog.tryToSpeak());
+        System.out.println("cat " +cat.tryToSpeak());
     }
 }

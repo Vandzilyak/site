@@ -1,9 +1,9 @@
 package animals;
 
-public class Duck extends Animal {
+public class LitleDog extends Animal {
 
 
-    public Duck(String name, int age) {
+    public LitleDog(String name, int age) {
         super(name, age);
         speak = new SpeakQuietly();
     }
